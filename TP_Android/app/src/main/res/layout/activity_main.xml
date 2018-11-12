@@ -6,13 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".view.activities.MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/marmitton"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Titre"
-        android:textSize="70dp"
+        android:text="Bienvenue sur Smartmitton"
+        android:textSize="20dp"
         android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -21,23 +26,29 @@
 
     <Button
         android:id="@+id/basket_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
         android:text="BASKET"
+        android:textSize="30dp"
         android:layout_gravity="center"/>
 
     <Button
         android:id="@+id/recipes_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
         android:text="RECIPES"
+        android:textSize="30dp"
         android:layout_gravity="center"/>
 
     <Button
         android:id="@+id/search_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
         android:text="SEARCH"
+        android:textSize="30dp"
         android:layout_gravity="center"/>
 
 </LinearLayout>

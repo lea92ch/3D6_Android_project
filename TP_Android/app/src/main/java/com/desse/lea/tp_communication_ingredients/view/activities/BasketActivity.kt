@@ -1,7 +1,8 @@
-package com.desse.lea.tp_communication_ingredients
+package com.desse.lea.tp_communication_ingredients.view.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.desse.lea.tp_communication_ingredients.R
 
 class BasketActivity : AppCompatActivity() {
 
