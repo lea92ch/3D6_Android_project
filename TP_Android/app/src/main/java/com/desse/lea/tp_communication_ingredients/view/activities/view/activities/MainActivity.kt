@@ -1,4 +1,4 @@
-package com.desse.lea.tp_communication_ingredients.view.activities
+package com.desse.lea.tp_communication_ingredients.view.activities.view.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
