@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TP_communication_ingredients</string>
+    <string name="refresh">Refresh</string>
 </resources>
