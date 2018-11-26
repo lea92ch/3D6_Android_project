@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".BasketActivity" />
-        <activity android:name=".RecipiesActivity" />
+        <activity android:name=".RecipesActivity" />
         <activity android:name=".SearchActivity"></activity>
         <activity android:name=".ControlActivity"
             android:screenOrientation="portrait"/>

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import com.desse.lea.tp_communication_ingredients.view.activities.data.dao.AppDatabase
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         mRecipesButton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View) {
-                val recipesActivity = Intent(this@MainActivity, RecipiesActivity::class.java)
+                val recipesActivity = Intent(this@MainActivity, RecipesActivity::class.java)
                 startActivity(recipesActivity)
             }
         })
