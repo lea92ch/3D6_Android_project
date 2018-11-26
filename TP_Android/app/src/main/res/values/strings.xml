@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">TP_communication_ingredients</string>
     <string name="refresh">Refresh</string>
+    <string name="friends_ingredients">Friend s Ingredients</string>
+    <string name="my_ingredients">My Ingredients</string>
+    <string name="shared_ingredients">Shared Ingredients</string>
+    <string name="disconnect">Disconnect</string>
 </resources>

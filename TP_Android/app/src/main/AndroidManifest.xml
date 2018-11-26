@@ -21,6 +21,8 @@
         <activity android:name=".BasketActivity" />
         <activity android:name=".RecipiesActivity" />
         <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".ControlActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
