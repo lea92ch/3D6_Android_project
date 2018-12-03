@@ -9,6 +9,9 @@ import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.widget.ArrayAdapter
+import android.widget.ListView
+import com.desse.lea.tp_communication_ingredients.view.activities.data.dao.AppDatabase
 import kotlinx.android.synthetic.main.activity_control.*
 import java.io.IOException
 import java.util.*
@@ -27,10 +30,35 @@ class ControlActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_control)
+        my_ingredients.setOnClickListener{getbasket()}
         disconnect.setOnClickListener{disconnect()}
     }
 
 
+    private lateinit var mlistview: ListView
+    var mDb: AppDatabase? = null
+
+    private fun getbasket() {
+        setContentView(R.layout.activity_basketblue)
+
+        mDb = AppDatabase.getInMemoryDatabase(application)
+        val ingres = mDb?.ingredientModel()?.loadAllIngredients()
+
+        mlistview = findViewById<ListView>(R.id.list_item2)
+
+
+        val list = arrayOfNulls<String>(ingres?.size!!)
+
+
+        for (i in 0 until ingres.size) {
+            val ingre = ingres[i]
+            list[i] = ingre.mName
+        }
+
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, list)
+
+        mlistview.adapter = adapter
+    }
 
     private fun disconnect() {
         if (m_bluetoothSocket != null) {
