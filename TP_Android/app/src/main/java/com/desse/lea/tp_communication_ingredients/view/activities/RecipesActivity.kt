@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import com.desse.lea.tp_communication_ingredients.R.id.recipes_list
 import com.desse.lea.tp_communication_ingredients.business.businessManagerInterface
 import com.desse.lea.tp_communication_ingredients.business.getDataMock
 import com.desse.lea.tp_communication_ingredients.view.activities.data.dao.AppDatabase
@@ -20,10 +21,8 @@ class RecipesActivity : AppCompatActivity() ,RecipesCallBack {
     var mDb: AppDatabase? = null
 
     override fun onRecipesReceived(recipes: ArrayList<String>) {
-
         handler.post(Runnable {
             val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, recipes)
-
             recipes_list.adapter = adapter
         })
     }
@@ -65,7 +64,7 @@ class RecipesActivity : AppCompatActivity() ,RecipesCallBack {
         //oeuf mollet
         size = mDb?.ingredientModel()?.findIngredientByNameAndLastName("oeuf")!!.size
         if (size > 0) {
-            list.add("oeuf mollet")
+            list.add("oeuf brouillés")
         }
 
         var size2 = (mDb?.ingredientModel()?.findIngredientByNameAndLastName("pain")!!.size) +
@@ -75,11 +74,30 @@ class RecipesActivity : AppCompatActivity() ,RecipesCallBack {
             list.add("croque monsieur")
         }
 
-        var coucou = (mDb?.ingredientModel()?.findIngredientByNameAndLastName("pain")!!.size) +
+        var size3 = (mDb?.ingredientModel()?.findIngredientByNameAndLastName("pain")!!.size) +
                 (mDb?.ingredientModel()?.findIngredientByNameAndLastName("nutella")!!.size)
 
-        if (coucou > 1) {
+        if (size3 > 1) {
             list.add("tartine nutella")
+        }
+
+        var size4 = (mDb?.ingredientModel()?.findIngredientByNameAndLastName("patefeuillete")!!.size) +
+                (mDb?.ingredientModel()?.findIngredientByNameAndLastName("oeuf")!!.size) +
+                (mDb?.ingredientModel()?.findIngredientByNameAndLastName("saumon")!!.size) +
+                (mDb?.ingredientModel()?.findIngredientByNameAndLastName("poireau")!!.size) +
+                (mDb?.ingredientModel()?.findIngredientByNameAndLastName("fromage")!!.size) +
+                (mDb?.ingredientModel()?.findIngredientByNameAndLastName("cremefraiche")!!.size)
+
+        if (size4 > 5) {
+            list.add("quiche au saumon poireau")
+        }
+
+        var size5 = (mDb?.ingredientModel()?.findIngredientByNameAndLastName("pommedeterre")!!.size) +
+                (mDb?.ingredientModel()?.findIngredientByNameAndLastName("beurre")!!.size) +
+                (mDb?.ingredientModel()?.findIngredientByNameAndLastName("cremefraiche")!!.size)
+
+        if (size5 > 2) {
+            list.add("pure")
         }
 
 

@@ -8,7 +8,6 @@ interface businessManagerInterface {
 
     fun  getBasket() : Basket
     fun addIngredient (ingredient: Ingredient)
-    fun removeIngredient (ingredient: Ingredient)
 
     fun getBasketSize() : Int
 

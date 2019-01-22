@@ -42,16 +42,13 @@ class BasketActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basket)
 
-        add_ingredients.setOnClickListener{add()}
-        remove_ingredients.setOnClickListener{remove()}
-
+        add_ingredients.setOnClickListener { add() }
+        remove_ingredients.setOnClickListener { remove() }
 
 
     }
 
     // mlistview = findViewById<ListView>(R.id.list_item)
-
-
 
 
     /*
@@ -148,7 +145,7 @@ class BasketActivity : AppCompatActivity() {
 
         //val liste = getbasket(ingre as ArrayList<Ingredient>)
 
-        mlistview  = findViewById<ListView>(R.id.list_item3)
+        mlistview = findViewById<ListView>(R.id.list_item3)
         mlistview.setOnItemClickListener { parent, view, position, id ->
 
             val name: Ingredient = ingres!![position]
@@ -166,7 +163,7 @@ class BasketActivity : AppCompatActivity() {
 
             //Toast.makeText(applicationContext, name, Toast.LENGTH_SHORT).show()
 
-            Log.d("test",""+position)
+            Log.d("test", "" + position)
         }
 
 
@@ -198,4 +195,22 @@ class BasketActivity : AppCompatActivity() {
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listItems)
     }
 
+    fun getBasket(): Array<String?> {
+        val listItems =
+                arrayOfNulls<String>(
+                        mGetData.getBasketSize())
+        for (i in 0 until mGetData.getBasketSize()) {
+            listItems[i] = mGetData.getBasket().ingredients[i].mName
+        }
+
+        return listItems
+    }
+
+    fun BasketSize(): Int {
+        return mGetData.getBasketSize()
+    }
+
 }
+
+
+

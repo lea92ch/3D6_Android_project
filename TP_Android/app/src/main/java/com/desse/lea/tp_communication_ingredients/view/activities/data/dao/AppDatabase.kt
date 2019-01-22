@@ -17,7 +17,7 @@ abstract class AppDatabase : RoomDatabase() {
     companion object {
 
         private var INSTANCE: AppDatabase? = null
-
+        @JvmStatic
         fun getInMemoryDatabase(context: Context): AppDatabase? {
             if (INSTANCE == null) {
                 INSTANCE = Room.databaseBuilder(
@@ -32,5 +32,7 @@ abstract class AppDatabase : RoomDatabase() {
         fun destroyInstance() {
             INSTANCE = null
         }
+
+
     }
 }

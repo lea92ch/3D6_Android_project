@@ -100,13 +100,6 @@ class getDataMock(activity: Activity) : businessManagerInterface {
     }
 
 
-    override fun removeIngredient(ingredient: Ingredient) {
-
-        val basket = ManageData(mActivity).getBasket(mActivity)
-        basket.ingredients.remove(ingredient)
-        ManageData(mActivity).saveBasket(mActivity, ingredient)
-
-    }
 
 
 }
